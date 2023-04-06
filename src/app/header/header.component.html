@@ -1,0 +1,26 @@
+<header>
+    <div class="navbar navbar-dark bg-success shadow-sm">
+      <div class=" navbar-brand align-item-center d-flex">
+        <i  routerLink="/product" style="font-size: 40px;" class= "fas fa-shipping-fast">&nbsp;
+        </i>
+        <strong routerLink="/product" style="font-size: 30px;">ShoppY</strong>
+        <div class="form-group">
+           <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search product">
+        </div>  <!--This is our Navbar-->
+        <span class="fas fa-search search-icon"></span>
+      </div>
+       <!-- <div *ngIf="IsloggedIn">
+        <h6 >Hello<h3>{{fullName}}</h3> </h6>
+      </div>  -->
+      <div>
+    
+         <a (click)="logout()" *ngIf="!IsloggedIn"class=" btn btn-outline-danger ">LogOut</a>  
+        <a *ngIf="!IsloggedIn" (click)="show()" routerLink="/login" class=" btn btn-outline-warning ">LogIn</a>
+        <a routerLink="/signup" *ngIf="!IsloggedIn"class=" btn btn-outline-warning ">SignUp</a>
+        <button routerLink="cart" class="btn btn-success">
+          <i style="font-size:30px;" class="fas fa-cart-plus"></i>
+          <div style="font-size:10px;" class="badge bg-danger">{{totalItem}}</div> 
+        </button>
+      </div>
+    </div>
+</header>

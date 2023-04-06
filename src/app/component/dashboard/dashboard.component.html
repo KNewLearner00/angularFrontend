@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">       
+   <div class="container-fluid">
+     <a class="navbar-brand" href="#">ShoppIt</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="#">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">About</a>
+         </li>
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Categories
+           </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <li><a class="dropdown-item" href="#">Electronics</a></li>
+             <li><a class="dropdown-item" href="#">Cosmetics</a></li>
+             <li><hr class="dropdown-divider"></li>
+             <li><a class="dropdown-item" href="#">Something else here</a></li>
+           </ul>
+         </li>
+         <form class="d-flex" >
+         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success" type="submit">Search</button>
+       </form>
+       </ul>
+         <!-- <form class="d-flex">
+         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success" type="submit">Search</button>
+       </form> -->
+       <div>
+         <h6>Hello<h3>{{fullName}}</h3> </h6>
+       </div>
+     </div>
+   </div>
+   <a (click)="logout()" class=" btn btn-outline-danger ">LogOut</a>   <!--   //btn btn-danger -->
+ </nav>
+<ng-container *ngIf="role === 'User'">
+ <h2>Registered List</h2><br>
+ <div class="table-responsive">
+   <table class="table table-striped table-sm">
+      <thead>
+         <tr>
+               <th scope="col">#</th>
+               <th scope="col">UserName</th>
+         </tr>
+      </thead>
+      <tbody>
+           <tr *ngFor="let user of users; let i=index">
+              <td>{{i+1}}</td>
+            <td>{{user.username}}</td>
+             </tr>
+      </tbody>
+   </table>
+ </div>
+</ng-container>
+
+
+
+
+<!-- <button (click)="logout()" class="btn btn-danger">LogOut</button>
+<h1>dashboard works!</h1>
+
+<ul *ngFor="let user of users">
+   <li>{{user.username}}</li>
+</ul> -->
